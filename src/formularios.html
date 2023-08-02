@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários em HTML</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <article>
+        <h2>Formulários em HTML</h2>
+        <p>Formulários são extremamente importantes, mesmo que você não tenha percebido usamos formulários com grande frequência. Quando visitamos um site e inserimos alguma informação através de uma caixa de entrada, seja de texto, número, email, etc..</p>
+        <p>Para criar um formulário bastar usar a tag &lt;form&gt;, esta precisa de dois atributos muito importantes o action e o method, action é página para qual o formulário será submetido. Já o method define o método de envio dos dados do formulário, os principais métodos são o GET e o POST. O método GET usa a própria url da página para enviar as informações, sendo não recomendada para informações vitais, como senhas. Mas facilita o compartilhamento de páginas com conteúdo igual, um exemplo disso sendo o YouTube que usa o método GET nas urls para indicar qual vídeo foi solicitado. Já o método POST não usa url para envio de informações, sendo mais seguro, mas em contra partida não permite a mesma facilidade de compartilhamento que o GET. Exemplo de formulário vazio: </p>
+        <pre><code>
+            &lt;form action="formularios.html" method="post"&gt;&lt;/form&gt;
+        </code></pre>
+        <h3>Os Diferentes Inputs</h3>
+        <p>A tag mais usada em formulários é o &lt;input&gt;, que possui uma série de atributos que são usados para customizar o funcionamento dele, como se é obrigatório, limite de caracteres, um placeholder(texto que aparece quando está vazio) e o tipo(texto, número, email, etc.), definir o tipo e o nome de cada input é essencial para o funcionamento correto do formulário. Neste<a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/input">link</a> é possível aprender um pouco mais sobre a tag &lt;input&gt;. A seguir são alguns exemplos de inputs: </p>
+        <pre><code>
+            &lt;input type="text"&gt;
+            &lt;input type="number"&gt;
+            &lt;input type="range" min="0" max="10" &gt;
+            &lt;input type="checkbox"&gt;
+        </code></pre>
+        Resultado:
+        <input type="text">
+        <input type="number">
+        <input type="range" min="0" max="10">
+        <input type="checkbox"> 
+        <h3>A Tag &lt;Select&gt;</h3>
+        Outra tag muito utilizada nos formulários é a &lt;select&gt; que permite a seleção de um valor entre um ou mais grupos de opções, cada valor selecionável é definido por uma tag &lt;option&gt; que são parecidas com a tag &lt;input&gt;, precisando de value, conteúdo, etc.. A tag &lt;optgroup&gt; permite a divisão das opções em grupos, podendo colocar um título para cada grupo. Exemplo:
+        <pre><code>
+            &lt;select name="exemplo"&gt;
+                &lt;optgroup label="exemplo de grupo"&gt;
+                    &lt;option value="0"&gt;Opção 0&lt;/option&gt;
+                    &lt;option value="1"&gt;Opção 1&lt;/option&gt;
+                &lt;/optgroup&gt;
+                &lt;option value="2"&gt;Opção 2&lt;/option&gt;
+            &lt;/select&gt;
+        </code></pre>
+        Resultado:
+        <select name="exemplo">
+            <optgroup label="exemplo de grupo">
+                <option value="0">Opção 0</option>
+                <option value="1">Opção 1</option>
+            </optgroup>
+            <option value="2">Opção 2</option>
+        </select>
+        <h3>Como Enviar um Formulário</h3>
+        Para enviar um formulário há três maneiras usando a tag &lt;button&gt(sem ter o type="button");, a tag &lt;input&gt; com o type="submit", e usando Javascript. Para as tags citadas é necessário que estejam dentro da tag &lt;form&gt; da seguinte maneira:
+        <pre><code>
+                &lt;form method="get" action="formularios.html"&gt;
+                    &lt;input type="submit" value="enviar"&gt;
+                    &lt;button&gt;enviar&lt;/button&gt;
+                    &lt;button type="button"&gt;não consegue enviar&lt;/button&gt;
+                &lt;form&gt;
+        </code></pre>
+        Resultado:
+        <form method="get" action="formularios.html">
+            <input type="submit" value="enviar">
+            <button>enviar</button>
+            <button type="button">não consegue enviar</button>
+        <form>
+    </article>
+</body>
+</html>
