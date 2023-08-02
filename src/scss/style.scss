@@ -1,0 +1,24 @@
+article, tags-textuais, tags-de-midia, outras-tags {
+    display: flex;
+    flex-direction: column;
+
+    h2, h3 { text-align: center; }
+
+    p {
+        text-align: justify;
+    }
+
+    pre {
+        width: 90%;
+        background-color: #696969;
+        color: white;
+        align-self: center;
+    }
+
+    iframe { height: min-content; }
+
+    img, video {
+        width: 45%;
+        align-self: center;
+    }
+}
