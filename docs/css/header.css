@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  background-color: #080853;
+  color: #ffffff;
+}
+header h1, header h2 {
+  text-align: center;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+}
+header nav a {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.7em;
+}
+header nav a:hover {
+  background-color: #00ffff;
+}

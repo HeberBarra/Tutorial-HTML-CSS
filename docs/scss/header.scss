@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    background-color: #080853;
+    color: #ffffff;
+
+    h1, h2 { text-align: center; }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+
+        a {
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            padding: .7em;
+
+            &:hover { background-color: #00ffff; }
+        }
+    }
+}

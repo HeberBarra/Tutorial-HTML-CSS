@@ -1,0 +1,19 @@
+main {
+  margin: 0.7em 0;
+  gap: 0.7em;
+}
+main a {
+  border: solid #080853;
+  width: 90%;
+  color: white;
+  background-color: #4848cf;
+  text-decoration: none;
+  text-align: center;
+}
+main a:hover {
+  background-color: #00ffff;
+}
+
+footer {
+  text-align: center;
+}
