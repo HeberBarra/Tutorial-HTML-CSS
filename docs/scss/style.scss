@@ -1,6 +1,18 @@
+body {background-color: #d5d5d5;}
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 article, tags-textuais, tags-de-midia, outras-tags {
     display: flex;
     flex-direction: column;
+    width: 90%;
+    gap: .5em;
+    margin-bottom: .5em;
 
     h2, h3 { text-align: center; }
 
@@ -8,11 +20,22 @@ article, tags-textuais, tags-de-midia, outras-tags {
         text-align: justify;
     }
 
+    input, select, button, pre {align-self: center; width: 100%;}
+
     pre {
-        width: 90%;
         background-color: #696969;
         color: white;
-        align-self: center;
+        padding: .5em;
+        margin: 0;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+
+        code {
+            max-width: 100%;
+            display: flex;
+            overflow-wrap: normal;
+        }
     }
 
     iframe { height: min-content; }
@@ -20,5 +43,12 @@ article, tags-textuais, tags-de-midia, outras-tags {
     img, video {
         width: 45%;
         align-self: center;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: .5em;
     }
 }

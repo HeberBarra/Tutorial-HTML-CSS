@@ -1,23 +1,55 @@
+body {
+  background-color: #d5d5d5;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 article, tags-textuais, tags-de-midia, outras-tags {
-    display: flex;
-    flex-direction: column;
-  }
-  article h2, article h3, tags-textuais h2, tags-textuais h3, tags-de-midia h2, tags-de-midia h3, outras-tags h2, outras-tags h3 {
-    text-align: center;
-  }
-  article p, tags-textuais p, tags-de-midia p, outras-tags p {
-    text-align: justify;
-  }
-  article pre, tags-textuais pre, tags-de-midia pre, outras-tags pre {
-    width: 90%;
-    background-color: #696969;
-    color: white;
-    align-self: center;
-  }
-  article iframe, tags-textuais iframe, tags-de-midia iframe, outras-tags iframe {
-    height: min-content;
-  }
-  article img, article video, tags-textuais img, tags-textuais video, tags-de-midia img, tags-de-midia video, outras-tags img, outras-tags video {
-    width: 45%;
-    align-self: center;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+article h2, article h3, tags-textuais h2, tags-textuais h3, tags-de-midia h2, tags-de-midia h3, outras-tags h2, outras-tags h3 {
+  text-align: center;
+}
+article p, tags-textuais p, tags-de-midia p, outras-tags p {
+  text-align: justify;
+}
+article input, article select, article button, article pre, tags-textuais input, tags-textuais select, tags-textuais button, tags-textuais pre, tags-de-midia input, tags-de-midia select, tags-de-midia button, tags-de-midia pre, outras-tags input, outras-tags select, outras-tags button, outras-tags pre {
+  align-self: center;
+  width: 100%;
+}
+article pre, tags-textuais pre, tags-de-midia pre, outras-tags pre {
+  background-color: #696969;
+  color: white;
+  padding: 0.5em;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+article pre code, tags-textuais pre code, tags-de-midia pre code, outras-tags pre code {
+  max-width: 100%;
+  display: flex;
+  overflow-wrap: normal;
+}
+article iframe, tags-textuais iframe, tags-de-midia iframe, outras-tags iframe {
+  height: min-content;
+}
+article img, article video, tags-textuais img, tags-textuais video, tags-de-midia img, tags-de-midia video, outras-tags img, outras-tags video {
+  width: 45%;
+  align-self: center;
+}
+article form, tags-textuais form, tags-de-midia form, outras-tags form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
+}

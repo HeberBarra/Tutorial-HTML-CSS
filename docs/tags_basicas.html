@@ -6,19 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tags Básicas e Essenciais do HTML</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
-    <article>
+    <header>
+        <h1>Tutorial de HTML5 e CSS3 Básicos</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="glossario.html">GLOSSÁRIO</a>
+        </nav>
+        <h2>Tágs Básicas</h2>
+    </header>
+    <main>
+        <article>
         <h2>Estrutura Inicial de Todo Arquivo HTML</h2>
         <p>
             É de bom costume que todo arquivo HTML comece uma tag &lt;!DOCTYPE html&gt; para indicar que a versão do
             HTML utilizado é a 5. Em seguida deve ser criada a tag &lt;html&gt;, que deve ser fechada ao final do
             arquivo, na abertura dessa tag deve indicar a língua do site — para questões de acessibilidade e afins —
             para a nossa língua materna basta colocar <code>lang="pt-br"</code> dentro da tag &lt;html&gt;, dessa forma:
-        <pre><code>
-            &lt;html lang="pt-br"&gt;
-            </code></pre>
+            <pre><code>&lt;html lang="pt-br"&gt;</code></pre>
         </p>
         <p>
             <code>lang</code> é um atributo, conforme formos vendo e utilizando as tags, conheceremos mais atributos.
@@ -27,150 +35,108 @@
             &lt;head&gt; criaremos a tag &lt;body&gt; que é onde fica o conteúdo do site, mas ainda podemos colocar css
             e scripts dentro do body sem problema algum. Temos que definir o charset(conjunto de caracteres) que será
             utilizado pelo site, normalmente utilizamos o UTF-8, fazemos da seguinte forma:
-        <pre><code>
-            &lt;meta charset="UTF-8"&gt;
-            </code></pre>
-        Também devemos definir o título da paǵina:
-        <pre><code>
-            &lt;title&gt;Título da Página&lt;/title&gt;
-            </code></pre>
-        A seguinte tag ajudará com a questões de exibição
-        <pre><code>
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" &gt;
-            </code></pre>
+            <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+            Também devemos definir o título da paǵina:
+            <pre><code>&lt;title&gt;Título da Página&lt;/title&gt;</code></pre>
+            A seguinte tag ajudará com a questões de exibição
+            <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" &gt;</code></pre>
         </p>
         <p>
-            Estas três tags devem ficar dentro da tag
-
-            <head>, depois de fazer tudo isso o resultado é o seguinte:
-                <pre><code>
-            &lt;!DOCTYPE html&gt;
-            &lt;html lang="pt-br"&gt;
-                &lt;head&gt;
-                    &lt;meta charset="UTF-8"&gt;
-                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-                    &lt;title&gt;Título da Página&lt;/title&gt;
-                &lt;/head&gt;
-                &lt;body&gt;                
-                &lt;/body&gt;
-            &lt;/html&gt;
+            Estas três tags devem ficar dentro da tag &lt;head&gt;, depois de fazer tudo isso o resultado é o seguinte:
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Título da Página&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;                
+    &lt;/body&gt;
+&lt;/html&gt;
             </code></pre>
         </p>
     </article>
-    <article>
         <h2>Conteúdo da Página</h2>
-        <p>
-            Agora veremos como inserir conteúdo no site.
-        </p>
+        <p>Agora veremos como inserir conteúdo no site.</p>
         <tags-textuais>
             <h3>Tags Textuais</h3>
             <p>
-                Para inserir textos que apareceram no site, basta digitá-los dentro da tag &lt;body&gt;, mas fazer isso
-                sem colocar uma tag antes pode causar problemas em relação a estrutura do site. A tag &lt;p&gt; serve
-                para criar parágrafos, para utilizá-la é simples, basta fazer da seguinte maneira:
-            <pre><code>
-                    &lt;p&gt;Texto&lt;/p&gt;
-                </code></pre>
+                Para inserir textos que apareceram no site, basta digitá-los dentro da tag &lt;body&gt;, mas fazer isso sem colocar uma tag antes pode causar problemas em relação a estrutura do site. A tag &lt;p&gt; serve para criar parágrafos, para utilizá-la é simples, basta fazer da seguinte maneira:
+                <pre><code>&lt;p&gt;Texto&lt;/p&gt;</code></pre>
             </p>
             <p>
-                Outra tag que pode utilizada para inserir textos é a tag &lt;span&gt;, que criar um contêiner genérico,
-                com display em linha(veremos depois), que pode ser usado para outras coisas além de texto,
-                semelhantemente a tag &lt;p&gt;, para inserir textos usando a tag &lt;span&gt; fazemos da seguinte
-                forma:
-            <pre><code>
-                    &lt;span&gt;Texto&lt;/span&gt;
-                </code></pre>
+                Outra tag que pode utilizada para inserir textos é a tag &lt;span&gt;, que criar um contêiner genérico, com display em linha(veremos depois), que pode ser usado para outras coisas além de texto, semelhantemente a tag &lt;p&gt;, para inserir textos usando a tag &lt;span&gt; fazemos da seguinte forma:
+                <pre><code>&lt;span&gt;Texto&lt;/span&gt;</code></pre>
             </p>
             <p>
-                As tags textuais demonstradas até agora serve para a criação de blocos de textos, mas o HTML possui tags
-                específicas para a criação de títulos, com uma hierarquia entre eles, estas são as tags de cabeçalho,
-                que vão de &lt;h1&gt; até &lt;h6&gt;, com &lt;h1&gt; sendo a mais importante. Utilizamos ela da seguinte
-                forma:
-            <pre><code>
-                    &lt;h1&gt;Título Principal&lt;/h1&gt;
-                    &lt;h2&gt;Título Secundário&lt;/h2&gt;
-                    &lt;h6&gt;Título com Menos Importância&lt;/h6&gt;
+                As tags textuais demonstradas até agora serve para a criação de blocos de textos, mas o HTML possui tags específicas para a criação de títulos, com uma hierarquia entre eles, estas são as tags de cabeçalho, que vão de &lt;h1&gt; até &lt;h6&gt;, com &lt;h1&gt; sendo a mais importante. Utilizamos ela da seguinte forma:
+                <pre><code>
+&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Título Secundário&lt;/h2&gt;
+&lt;h6&gt;Título com Menos Importância&lt;/h6&gt;
                 </code></pre>
-            Resultado:
-            <iframe src="iframes/headings.html"></iframe>
+                Resultado:
+                <iframe src="iframes/headings.html"></iframe>
             </p>
             <p>
-                Existem também tags que são normalmente utilizadas para estilizar o texto(também representam diferenças
-                semânticas para aquele trecho), para deixar itálico, negrito, etc.. Podemos recriar o efeitos dessas
-                tags usando CSS, mas nada impede de usá-las para pequenos trechos de textos, como uma palavra ou frase.
+                Existem também tags que são normalmente utilizadas para estilizar o texto(também representam diferenças semânticas para aquele trecho), para deixar itálico, negrito, etc.. Podemos recriar o efeitos dessas tags usando CSS, mas nada impede de usá-las para pequenos trechos de textos, como uma palavra ou frase.
                 Exemplos:
-            <pre><code>
-                    &lt;i&gt;itálico&lt;/i&gt;
-                    &lt;b&gt;negrito&lt;/b&gt;
-                    &lt;del&gt;texto excluído&lt;/del&gt;
+                <pre><code>
+&lt;i&gt;itálico&lt;/i&gt;
+&lt;b&gt;negrito&lt;/b&gt;
+&lt;del&gt;texto excluído&lt;/del&gt;
                 </code></pre>
-            Resultado:
-            <pre>
-                    <i>itálico</i>
-                    <b>negrito</b>
-                    <del>texto excluído</del>
+                Resultado:
+                <pre>
+<i>itálico</i>
+<b>negrito</b>
+<del>texto excluído</del>
                 </pre>
             </p>
         </tags-textuais>
         <tags-de-midia>
             <h3>Tags de Mídia</h3>
             <p>
-                Além de textos, podemos inserir várias formas de mídias no site, como fotos, vídeos, áudios e até mesmo
-                outras páginas.
-                Primeiramente veremos como inserir imagens, para isto usaremos normalmente a tag &lt;img&gt;,
-                diferentemente da maioria das outras tags, esta tag não precisa ser fechada. Para indicar qual imagem
-                que deve ser exibida devemos usar o atributo src, que recebe o caminho ou a url até a imagem. No caso do
-                caminho até a imagem o ideal é sempre colocar a imagem junto dos arquivos do site e usar o caminho
-                relativo até a imagem. Por exemplo, considerando a seguinte estrutura de arquivos:
-            <pre><code>
-                    Exemplo/
-                    ├── css
-                    ├── imagens
-                    │   └── exemplo.png
-                    └── index.html
+                Além de textos, podemos inserir várias formas de mídias no site, como fotos, vídeos, áudios e até mesmo outras páginas. Primeiramente veremos como inserir imagens, para isto usaremos normalmente a tag &lt;img&gt;,diferentemente da maioria das outras tags, esta tag não precisa ser fechada. Para indicar qual imagem que deve ser exibida devemos usar o atributo src, que recebe o caminho ou a url até a imagem. No caso do caminho até a imagem o ideal é sempre colocar a imagem junto dos arquivos do site e usar o caminho relativo até a imagem. Por exemplo, considerando a seguinte estrutura de arquivos:
+                <pre><code>
+Exemplo/
+├── css
+├── imagens
+│   └── exemplo.png
+└── index.html
                 </code></pre>
-            <p>Agora, para colocar a imagem exemplo.png no index.html basta colocar dentro dele a tag &lt;img&gt; da
-                seguinte maneira:</p>
-            <pre><code>
-                    &lt;!--<i>code snippet</i>--&gt;
-                    &lt;img src=”imagens/exemplo.png” alt=”imagem de exemplo”&gt;
-                    &lt;!--<i>code snippet</i>--&gt;
-                </code></pre>
-            Resultado:
-            <img src="imagens/exemplo.png" alt="imagem de exemplo">
             </p>
             <p>
-                Além de imagens, podemos inserir áudios usando a tag &lt;audio&gt;, assim como a tag &lt;img&gt;
-                precisamos fornercer um valor para src, sendo a url ou caminho até o áudio. Precisamos controlar o
-                atributo controls para que o navegador mostre os controles. Considere a seguinte estruta:
+                Agora, para colocar a imagem exemplo.png no index.html basta colocar dentro dele a tag &lt;img&gt; da
+            seguinte maneira:
+                <pre><code>&lt;img src=”imagens/exemplo.png” alt=”imagem de exemplo”&gt;</code></pre>
+                Resultado:
+                <img src="imagens/exemplo.png" alt="imagem de exemplo">
+            </p>
+            </p>
+            <p>
+                Além de imagens, podemos inserir áudios usando a tag &lt;audio&gt;, assim como a tag &lt;img&gt; precisamos fornercer um valor para src, sendo a url ou caminho até o áudio. Precisamos controlar o atributo controls para que o navegador mostre os controles. Considere a seguinte estruta:
                 <pre><code>
-                    Exemplo/
-                    ├── audio_exemplo.mp3
-                    └── index.html
+Exemplo/
+├── audio_exemplo.mp3
+└── index.html
                 </code></pre>
-            No index.html, colocamos a tag &lt;audio&gt;:
-            <pre><code>
-                    &lt;!--<i>code snippet</i>--&gt;
-                    &lt;audio src="audio_exemplo.mp3"&gt controls&lt;/audio&gt;;
-                    &lt;!--<i>code snippet</i>--&gt;
-                </code></pre>
-            Resultado:
-            <audio src="midia/audio_exemplo.mp3" controls></audio>
+                No index.html, colocamos a tag &lt;audio&gt;:
+                <pre><code>&lt;audio src="audio_exemplo.mp3"&gt controls&lt;/audio&gt;</code></pre>
+                Resultado:
+                <audio src="midia/audio_exemplo.mp3" controls></audio>
             </p>
             <p>
                 Para a inserção de vídeos usamos a tag &lt;video&gt;.
                 Estrutura de arquivos:
                 <pre><code>
-                    Exemplo/
-                    ├── video_exemplo.mp4
-                    └── index.html
+Exemplo/
+├── video_exemplo.mp4
+└── index.html
                 </code></pre>
                 No arquivo index.html:
-                <pre><code>
-                    &lt;!--<i>code snippet</i>--&gt;
-                    &lt;video src="video_exemplo.mp4"&gt;&lt;/video&gt;
-                    &lt;!--<i>code snippet</i>--&gt;
-                </code></pre>
+                <pre><code>&lt;video src="video_exemplo.mp4"&gt;&lt;/video&gt;</code></pre>
                 Resultado:
                 <video src="midia/video_exemplo.mp4" controls></video>
             </p>
@@ -182,35 +148,35 @@
         </tags-de-midia>
         <outras-tags>
             <h3>Outras tags</h3>
-            <p>
-                Por último veremos algumas tags, que são extremamente úteis. Primeiro a tag &lt;div&gt; que é similar a tag &lt;span&gt;, mas possui um display em bloco, e também é utilizada comumente para criar divisões na página. Exemplo:
-                <pre><code>
-                    &lt;div&gt;
-                        &lt;h4&gt;Título de Exemplo&lt;/h4&gt;
-                        &lt;p&gt;Texto de Exemplo&lt;/p&gt;
-                    &lt;/div&gt;
-                </code></pre>
-                Outra tag muito importante é a tag &lt;a&gt; que é usado para criar hiperlinks, assim como as tags de mídia essa tag precisa de um atributo para funcionar corretamente, que nesse caso é o atributo href, que recebe o caminho até um arquivo ou a url que será usada no hiperlink. Também a tag &lt;a&gt; precisa de algum conteúdo dentro dela que será transformado no hiperlink. Exemplo:
-                <pre><code>
-                    &lt;a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a"&gt;
+                <p>
+                    Por último veremos algumas tags, que são extremamente úteis. Primeiro a tag &lt;div&gt; que é similar a tag &lt;span&gt;, mas possui um display em bloco, e também é utilizada comumente para criar divisões na página. Exemplo:
+                    <pre><code>
+&lt;div&gt;
+&lt;h4&gt;Título de Exemplo&lt;/h4&gt;
+&lt;p&gt;Texto de Exemplo&lt;/p&gt;
+&lt;/div&gt;
+                    </code></pre>
+                    Outra tag muito importante é a tag &lt;a&gt; que é usado para criar hiperlinks, assim como as tags de mídia essa tag precisa de um atributo para funcionar corretamente, que nesse caso é o atributo href, que recebe o caminho até um arquivo ou a url que será usada no hiperlink. Também a tag &lt;a&gt; precisa de algum conteúdo   dentro dela que será transformado no hiperlink. Exemplo:
+                    <pre><code>
+&lt;a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a"&gt;
+    a tag &lt;a&gt; possui algumas outras utilidades que podem ser vistas neste link
+&lt;/a&gt;
+                    </code></pre>
+                    Resultado:
+                    <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a">
                         a tag &lt;a&gt; possui algumas outras utilidades que podem ser vistas neste link
-                    &lt;/a&gt;
-                </code></pre>
-                Resultado:
-                <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/a">
-                        a tag &lt;a&gt; possui algumas outras utilidades que podem ser vistas neste link
-                </a>
+                    </a>
+                </p>
                 <p>
                     A última tag "básica" é a tag &lt;button&gt; que permite a criação de botões clicáveis, que com apenas HTML e CSS são meio inúteis sendo utilizados apenas em formulários, mas com Javascript e outras linguagens de programação, os botões podem ter mais utilidades. Exemplo:
                     <pre><code>
-                        &lt;button&gt;Botão Sem Utilidade&lt;/button&gt;
+&lt;button&gt;Botão Sem Utilidade&lt;/button&gt;
                     </code></pre>
                     Resultado:
                     <button>Botão Sem Utilidade</button>
                 </p>
-            </p>
         </outras-tags>
-    </article>
+    </main>
 </body>
 
 </html>
