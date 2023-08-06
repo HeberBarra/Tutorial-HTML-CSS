@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Básico</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/boxModelImage.css">
+</head>
+<body>
+    <header>
+        <h1>Tutorial de HTML5 e CSS3 Básicos</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="glossario.html">GLOSSÁRIO</a>
+        </nav>
+        <h2>CSS Básico</h2>
+    </header>
+    <main>
+        <article>
+            <p>
+                Fazer sites apenas com HTML é como construir apenas a estrutura de uma casa, levantar as paredes, mas não pintá-las, colocar um teto, etc.. Para fazer a parte estética da casa usamos o CSS. Podemos aplicar o CSS no HTML de três maneiras, utilizando a tag &lt;style&gt;, usando um arquivo externo e a tag &lt;link&gt; ou usando CSS em linha com o atributo style. Particularmente prefiro usar a tag &lt;link&gt;, pois permite uma leitura mais fácil do código, maior organização e redução de repetições desnecessárias.
+            </p>
+            <h2>Como Funciona o CSS</h2>
+            <p>
+                Agora veremos o funcionamento do CSS, primeiro veremos os seletores, quando usamos CSS, precisamos indicar aonde aquele estilo deve ser aplicado, para isto usamos os seletores, que podem ser o nome da tag, exemplo para a tag &lt;p&gt;, usamos apenas p, pois esse é o nome da tag. Outro tipo seletor pode ser o id ou classe do elemento(veremos adiante). * é utilizado para selecionar todos os elementos.    
+            </p> 
+            <p>
+                Depois do seletor devemos ou colocar outro seletor, ou abrir chaves. No caso um seletor depois de outro é utilizado para indicar uma sequência. Por exemplo, se tivermos a seguinte estrutura de HTML:
+                <pre><code>
+&lt;div&gt;
+    &lt;p&gt;Código de exemplo&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Texto fora da &lt;div&gt;&lt;/p&gt;
+                </code></pre>
+                Se quisermos selecionar apenas o &lt;p&gt; dentro da &lt;div&gt; podemos usar os seguintes seletores:
+                <pre><code>div p</code></pre>
+                Assim informamos o CSS que queremos aplicar aquele estilo para apenas os &lt;p&gt; que estão dentro uma &lt;div&gt;. Podemos usar quantos seletores quisermos para indicar o alvo(s) de um estilo. Também podemos separar os seletores com vírgulas ( , ) para indicar que são múltiplos alvos. Exemplo:
+                estrutura HTML:
+                <pre><code>
+&lt;div&gt;
+    &lt;p&gt;Código de exemplo&lt;/p&gt;
+&lt;/div&gt;
+&lt;span&gt;Texto fora da &lt;div&gt;&lt;/span&gt;
+                </code></pre>
+                Código CSS:
+                <pre><code>div p, span</code></pre>
+                Neste caso os alvos são qualquer &lt;p&gt; dentro de uma &lt;div&gt; e todos os &lt;span&gt;
+            </p>
+            <p>
+                Como antes disse depois do seletor(s) devemos abrir chaves ( {} ). Dentro das chaves colocaremos o estilo que queremos aplicar naquele elemento(s). Primeiro devemos colocar o nome da propriedade que queremos modificar, depois dois pontos ( : ) e logo após o valor(s) para aquela propriedade e por último colocar ponto e virgula ( ; ). As propriedades são normalmente uma ou duas palavras em inglês que indicam o que será modificado no elemento. Exemplo:
+                <br>
+                HTML:
+                <pre><code>
+&lt;div&gt;
+    &lt;p&gt;Código de exemplo&lt;/p&gt;
+&lt;/div&gt;
+&lt;span&gt;Texto fora da &lt;div&gt;&lt;/span&gt;
+                </code></pre>
+                CSS:
+                <pre><code>
+div p {
+    color: purple;
+    text-align: center;
+}
+
+span {
+    color: #454545; 
+}
+                </code></pre>
+                Resultado:
+                <iframe src="iframes/css_exemplo_01.html" loading="lazy"></iframe>
+            </p>
+            <h2>CSS usando a tag &lt;style&gt;</h2>
+            <p>
+                Para usar CSS dessa forma, basta abrir a style em qualquer parte dentro do &lt;html&gt;, mas mesmo assim procure deixar seu código organizado.
+                <br>
+                <br>
+                HTML:
+                <pre><code>
+&lt;div&gt;
+    &lt;p&gt;Código de exemplo&lt;/p&gt;
+&lt;/div&gt;
+&lt;span&gt;Texto fora da &lt;div&gt;&lt;/span&gt;
+&lt;style&gt;
+    div p {
+        color: purple;
+        text-align: center;
+    }
+
+    span {
+        color: #604545;
+        text-decoration: underline; 
+    }
+&lt;/style&gt;
+                </code></pre>
+                Resultado:
+                <iframe src="iframes/css_exemplo_02.html" loading="lazy"></iframe>
+            </p>
+            <h2>CSS usando a tag &lt;link&gt;</h2>
+            <p>
+                Outra forma de usar CSS é com um arquivo externo com a extensão css. Para aplicar os estilos do arquivo no HTML devemos usar a tag &lt;link&gt;, para que o HTML saiba daonde pegar o CSS.
+                <br>
+                Considerando a seguinte estrura de arquivos:
+                <pre><code>
+Exemplo/
+├── css
+│   └── estilo.css
+└── index.html
+                </code></pre>
+                Conteúdo do arquivo estilo.css
+                <pre><code>
+div p {
+    color: red;
+    text-decoration:line-through;
+}
+
+span {
+    color: orange;
+}
+                </code></pre>
+                Conteúdo arquivo index.html
+                <pre><code>
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="css/estilo.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+    &lt;p&gt;Exemplo&lt;/p&gt;
+&lt;/div&gt;
+&lt;span&gt;Exemplo&lt;/span&gt;
+&lt;/body&gt;
+                </code></pre>
+                Resultado:
+                <iframe src="iframes/css_exemplo_03.html" loading="lazy"></iframe>
+            </p>
+            <h2>Como usar CSS em linha</h2>
+            <p>
+                A última forma de usar CSS é chamada em linha, na qual usamos o atributo style do elemento para definir o estilo dele usando CSS entre aspas ( "" ou '' ). Esse metódo pode causar confusão e deixar o código mais difícil de ler, logo é mais recomendado para pequenos estilos e não para grandes e complexos. Exemplo: 
+                <pre><code>
+&lt;div&gt;
+    &lt;p style="background-color: orange; text-decoration: overline; color: white;"&gt;Exemplo&lt;/p&gt;
+&lt;/div&gt;
+&lt;span style="color: cyan;"&gt;Exemplo&lt;/span&gt;
+                </code></pre>
+                Resultado:
+                <iframe src="iframes/css_exemplo_04.html" loading="lazy"></iframe>
+            </p>
+            <h2>Class e ID</h2>
+            <p>
+                class e id são atributos que todo elemento possui. Eles podem ser utilizados como seletores para permitir uma precisão na escolha dos elementos, por exemplo ao invés de afetar todos os &lt;span&gt; com um estilo específico, é possível criar uma class, para aplicar aquele estilo para todos os &lt;span&gt; que tem aquela class. Enquanto não existe limitação na quantidade de elementos que podem ter a mesma class, apenas um elemento por página ter um id, ou seja, o id "titulo-principal" só pode ser usando em um elemento naquela página. Para usar a class como seletor é necessário colocar um ponto ( . ) antes do nome dela, por exemplo: <code>.exemplo</code>. Já para o id é necessário colocar uma cerquilha ( # ), dessa forma: <code>#titulo-principal</code>. Nomes de class e id são parecidas com variáveis em Java, ou seja, não podem conter espaços, nem caracteres especiais, mas podem ter sinais de menos ( - ). 
+            </p>
+
+            <h2>CSS Box Model</h2>
+            <p>
+                Agora veremos algo Box Model, que são coisas relacionadas a exibição do elemento. Veremos cada uma dessas, o Box Model começa pelo conteúdo do elemento e vai até a margin dele. Imagem de Modelo:
+            </p>
+        </article>
+        <box-model-explicacao>
+            <imagem-box-model>
+                        <box-margin title="margin">
+                            <box-border title="border" style="background-color: #ff0000;">
+                                <box-padding title="padding" style="background-color: #ffa500;">
+                                    <box-content title="conteúdo" style="background-color: #00ffff;">
+                                        conteúdo
+                                    </box-content>
+                                </box-padding>
+                            </box-border>
+                        </box-margin>
+                    </imagem-box-model>
+                    <legenda-box-model>
+                        <cor-imagem></cor-imagem><span>margin</span>
+                        <cor-imagem></cor-imagem><span>border</span>
+                        <cor-imagem></cor-imagem><span>padding</span>
+                        <cor-imagem></cor-imagem><span>conteúdo</span>
+                    </legenda-box-model>
+        </box-model-explicacao>
+        <article>
+            <p>
+                O conteúdo, é auto-explicativo, é onde fica a parte do conteúdo do elemento, seja um texto, uma imagem, outro elemento. Ao redor do conteúdo padding, que serve como um espaço branco entre o conteúdo e a border do elemnto, ou algo mais externo seja o elemento não tiver border. Border é a borda, uma moldura do elemento. É possível definir a grossura, a cor e o estilo da border. Por último margin é o espaço branco entre o elemento e os elementos externos a ele. Exemplos:  
+            </p>
+            <h3>padding</h3>
+            <p>
+                Ao invés de definir o padding para todos os lados do elemento, é possível definir apenas valores para apenas lados específicos, usando as propriedades padding-right, padding-left, padding-bottom, padding-top ou padding para defini-las de uma vez. Border só para deixar mais claro. 
+                <br>
+                Código:
+                <pre><code>
+&lt;style&gt;
+    div {
+        padding: 0;
+        border: solid black;
+    }
+
+    div.com-padding {
+        padding: .7em;
+    }
+
+    div.padding-em-cima {
+        padding-top: 1em;
+    }
+&lt;/style&gt;
+&lt;div&gt;
+    Exemplo sem padding
+&lt;/div&gt;
+&lt;div class="com-padding"&gt;
+    Exemplo com padding
+&lt;/div&gt;
+&lt;div class="padding-em-cima"&gt;
+    Exemplo com padding apenas em cima
+&lt;/div&gt;
+                </code></pre>
+                Resultado:
+                <iframe src="iframes/css_exemplo_05.html" loading="lazy"></iframe>
+            </p>
+            <h3>border</h3>
+            <p>
+                Como pode ser visto no exemplo anterior, border cria uma borda ao redor do elemento. E também como antes disse é possível definir a cor, grossura e o estilo, podendo definir se apenas um ou mais pedaços da borda devem ser daquele jeito. (Margin usado para facilitar a visualização)
+                <br>
+                Código:
+                <pre><code>
+&lt;style&gt;
+    div {
+        border: solid black;
+        color: blue;
+        text-align: center;
+        margin: .2em 0;
+    }
+
+    div.borda-grossa {
+        border-width: .5em;
+    }
+
+    div.apenas-laterais {
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    div.cantos-redondos {
+        border-radius: .5em;
+    }
+
+    div.borda-pontilhada {
+        border-style: dotted;
+    }
+
+    div.borda-dupla {
+        border-style: double;
+    }
+&lt;/style&gt;
+&lt;div&gt;
+    Exemplo 1
+&lt;/div&gt;
+&lt;div class="borda-grossa"&gt;
+    Exemplo 2
+&lt;/div&gt;
+&lt;div class="apenas-laterais"&gt;
+    Exemplo 3
+&lt;/div&gt;
+&lt;div class="cantos-redondos"&gt;
+    Exemplo 4
+&lt;/div&gt;
+&lt;div class="borda-pontilhada"&gt;
+    Exemplo 5
+&lt;/div&gt;
+&lt;div class="borda-dupla"&gt;
+    Exemplo 6
+&lt;/div&gt;
+                </code></pre>
+                Resultado:
+                <iframe src="iframes/css_exemplo_06.html" loading="lazy"></iframe>
+            </p>
+            <h3>margin</h3>
+            <p>
+                Parecido com o padding, mas ao invés de definir o espaço branco interior do elemento ele defini o espaço branco externo do elemento.
+                <br>
+                Código:
+                <pre><code>
+&lt;style&gt;
+    div {
+        margin: 0;
+        border: solid black;
+    }
+
+    div.com-margin {
+        margin: .7em;
+    }
+
+    div.margin-laterais {
+        margin-right: .5em;
+        margin-left: .5em;
+    }
+&lt;/style&gt;
+&lt;div&gt;
+    Exemplo sem margin
+&lt;/div&gt;
+&lt;div class="margin-laterais"&gt;
+    Exemplo com margim apenas nas laterais
+&lt;/div&gt;
+&lt;div class="com-margin"&gt;
+    Exemplo com margin
+&lt;/div&gt;
+                </code></pre>
+                Resultado:
+                <iframe src="iframes/css_exemplo_07.html" loading="lazy"></iframe>
+            </p>
+        </article>
+    </main>
+</body>
+</html>

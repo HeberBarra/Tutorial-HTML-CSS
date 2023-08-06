@@ -1,0 +1,68 @@
+imagem-box-model,
+imagem-box-model box-margin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20em;
+  aspect-ratio: 1/1;
+  background-color: #008000;
+}
+
+box-border,
+box-padding,
+box-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  aspect-ratio: 1/1;
+  color: white;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+  imagem-box-model,
+  imagem-box-model box-margin {
+    width: 40vw;
+  }
+  box-content {
+    font-size: 5vw;
+  }
+  box-model-explicacao {
+    flex-direction: column;
+  }
+}
+box-model-explicacao {
+  display: flex;
+  width: fit-content;
+  gap: 1.5em;
+  align-items: center;
+}
+
+legenda-box-model {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+}
+legenda-box-model cor-imagem {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: 0.1em solid #000000;
+  grid-column: 1;
+}
+legenda-box-model :nth-child(1) {
+  background-color: #008000;
+  grid-row: 1;
+}
+legenda-box-model :nth-child(3) {
+  background-color: #ff0000;
+  grid-row: 2;
+}
+legenda-box-model :nth-child(5) {
+  background-color: #ffa500;
+  grid-row: 3;
+}
+legenda-box-model :nth-child(7) {
+  background-color: #00ffff;
+  grid-row: 4;
+}
